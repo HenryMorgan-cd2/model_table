@@ -1,0 +1,10 @@
+%table
+  %thead
+    %tr
+      - columns.each do |column|
+        %th= column.heading
+  %tbody
+    - objects.each do |object|
+      %tr
+        - columns.each do |column|
+          %td= column.value(self, object)
