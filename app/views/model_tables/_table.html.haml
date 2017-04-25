@@ -1,0 +1,10 @@
+%table
+  %thead
+    %tr
+      - table.columns.each do |column|
+        %th= column.heading
+  %tbody
+    - table.rows.each.with_index do |object, i|
+      %tr{class: table.row_class_for(object, i)}
+        - table.columns.each do |column|
+          %td= column.value(object)
